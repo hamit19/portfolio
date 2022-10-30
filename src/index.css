@@ -1,13 +1,34 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  input,
+  textarea {
+    font-family: "Roboto", sans-serif;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .primary-btn {
+    @apply px-4 py-2 mt-6 bg-indigo-500 rounded-md shadow-2xl text-gray-50 hover:bg-indigo-600 custom-transition;
+  }
+}
+
+@layer utilities {
+  .custom-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  @variants responsive {
+    .text-shadow {
+      text-shadow: 0 1px 20px rgba(129, 140, 248, 0.7);
+    }
+    .custom-bg-clip {
+      clip-path: polygon(0 0, 100% 0, 100% 89%, 0% 100%);
+    }
+  }
 }
