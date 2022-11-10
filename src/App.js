@@ -5,7 +5,7 @@ import AboutMe from "./components/aboutMe/AboutMe";
 import SkillsSection from "./components/skills/SkillsSection";
 import Portfolio from "./components/portfolio/Portfolio";
 import Modal from "./components/modal/Modal";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {

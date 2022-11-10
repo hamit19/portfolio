@@ -65,7 +65,7 @@ function SkillsSection() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scrolled]);
 
   const renderSkillDetails = () => {
     return skillsDetails.map((skill) => (
