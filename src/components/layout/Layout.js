@@ -1,16 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RiMenu3Line, RiMenuLine } from "react-icons/ri";
+import Footer from "../footer/Footer";
 
-function Layout({ children }) {
+function Layout({ children, setOpen }) {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(Math.floor(window.pageYOffset));
+
+  const [isScrolledUserTo, setIsScrolledUserTo] = useState(
+    scrolled >= 670 ? true : false
+  );
+
+  const handleOnClick = () => {
+    setTimeout(() => {
+      setIsActiveMenu(!isActiveMenu);
+    }, 500);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(Math.floor(window.pageYOffset));
+
+      Math.floor(window.pageYOffset) > 670
+        ? setIsScrolledUserTo(true)
+        : setIsScrolledUserTo(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="w-full h-screen bg-slate-900">
-      <div className="container w-full">
-        <nav className="fixed top-0 z-20 flex flex-row justify-between w-full p-4 md:justify-around">
-          <h1 className="text-xl font-bold text-indigo-300 text-shadow ">
-            Hamid Hassani
-          </h1>
+    <div className="bg-slate-900">
+      <div className="container ">
+        <nav
+          className={`fixed top-0 z-20 flex flex-row justify-between w-full p-4 md:justify-around custom-transition bg-opacity-90 ${
+            isScrolledUserTo ? "bg-slate-800 shadow-xl" : "bg-transparent"
+          } `}
+        >
+          <a href="#home">
+            <h1 className="text-xl font-bold text-indigo-300 text-shadow ">
+              Hamid Hassani
+            </h1>
+          </a>
 
           <div className="md:hidden">
             {!isActiveMenu ? (
@@ -33,34 +67,47 @@ function Layout({ children }) {
             >
               <li>
                 <a
+                  onClick={() => handleOnClick()}
                   className="hover:tracking-widest custom-transition hover:text-indigo-400 hover:text-shadow "
-                  href="/"
+                  href="#home"
                 >
                   Home
                 </a>
               </li>
               <li>
                 <a
+                  onClick={() => handleOnClick()}
                   className="hover:tracking-widest custom-transition hover:text-indigo-400 hover:text-shadow "
-                  href="/"
+                  href="#about-me"
                 >
                   About Me
                 </a>
               </li>
               <li>
                 <a
+                  onClick={() => handleOnClick()}
                   className="hover:tracking-widest custom-transition hover:text-indigo-400 hover:text-shadow "
-                  href="/"
+                  href="#skills"
                 >
                   My Skills
                 </a>
               </li>
               <li>
                 <a
+                  onClick={() => handleOnClick()}
                   className="hover:tracking-widest custom-transition hover:text-indigo-400 hover:text-shadow "
-                  href="/"
+                  href="#portfolio"
                 >
                   Portfolio
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => handleOnClick()}
+                  className="hover:tracking-widest custom-transition hover:text-indigo-400 hover:text-shadow "
+                  href="#footer"
+                >
+                  Contact Me
                 </a>
               </li>
             </ul>
@@ -70,7 +117,7 @@ function Layout({ children }) {
             <li>
               <a
                 className="font-medium hover:text-shadow hover:text-indigo-300 custom-transition"
-                href="/"
+                href="#home"
               >
                 Home
               </a>
@@ -78,7 +125,7 @@ function Layout({ children }) {
             <li>
               <a
                 className="font-medium hover:text-shadow hover:text-indigo-300 custom-transition"
-                href="/"
+                href="#about-me"
               >
                 About Me
               </a>
@@ -86,7 +133,7 @@ function Layout({ children }) {
             <li>
               <a
                 className="font-medium hover:text-shadow hover:text-indigo-300 custom-transition"
-                href="/"
+                href="#skills"
               >
                 My Skills
               </a>
@@ -94,18 +141,22 @@ function Layout({ children }) {
             <li>
               <a
                 className="font-medium hover:text-shadow hover:text-indigo-300 custom-transition"
-                href="/"
+                href="#portfolio"
               >
                 Portfolio
               </a>
             </li>
           </ul>
-          <button className="hidden px-6 py-2 text-sm font-medium text-indigo-300 bg-transparent border border-indigo-300 rounded-md shadow-xl cursor-pointer md:inline-block hover:bg-indigo-400 custom-transition hover:text-gray-100 ">
+          <button
+            onClick={() => setOpen(true)}
+            className="hidden px-6 py-2 text-sm font-medium text-indigo-300 bg-transparent border border-indigo-300 rounded-md shadow-xl cursor-pointer md:inline-block hover:bg-indigo-400 custom-transition hover:text-gray-100 "
+          >
             Contact Me
           </button>
         </nav>
       </div>
       <main>{children}</main>
+      <Footer setOpen={setOpen} />
     </div>
   );
 }

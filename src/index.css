@@ -10,6 +10,10 @@
   textarea {
     font-family: "Roboto", sans-serif;
   }
+  html {
+    scroll-behavior: smooth;
+    background-color: #0f172a;
+  }
 }
 
 @layer components {
@@ -29,6 +33,76 @@
     }
     .custom-bg-clip {
       clip-path: polygon(0 0, 100% 0, 100% 89%, 0% 100%);
+    }
+    .custom-bg-clip-2 {
+      clip-path: polygon(0 8%, 100% 0%, 100% 94%, 0% 100%);
+    }
+    .custom-bg-clip-3 {
+      clip-path: polygon(0 20%, 100% 0%, 100% 74%, 0% 100%);
+    }
+
+    .skill-detail {
+      width: 10rem;
+      height: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+
+    .skill-detail .bar-wrapper {
+      position: relative;
+      z-index: 50;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .skill-detail .bar-wrapper .bar {
+      position: absolute;
+      z-index: 50;
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .svg {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    .circle-bar {
+      transition: stroke-dashoffset 4s 1s ease-in-out;
+      stroke: #818cf8;
+      stroke-dasharray: 360;
+      stroke-dashoffset: 100;
+      stroke-width: 6;
+      stroke-linecap: round;
+      fill: transparent;
+    }
+    .circle-back-bar {
+      stroke: #1e293b;
+      stroke-dasharray: 360;
+      stroke-dashoffset: 0;
+      stroke-width: 6;
+      stroke-linecap: round;
+      fill: transparent;
+    }
+
+    .amount-of-skill {
+      transition: all 0.3s ease-in-out;
     }
   }
 }

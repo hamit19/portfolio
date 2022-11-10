@@ -17,6 +17,13 @@ module.exports = {
       animation: {
         rotate: "rotate 1.5s forwards ease-in-out",
       },
+      boxShadow: {
+        "4xl": "inset 0 0 10px 0 rgba(0, 0, 0, 0.3)",
+      },
+
+      gridTemplateColumns: {
+        "custom-auto": " repeat(auto-fill, minmax(250px, 1fr) ) ",
+      },
     },
   },
   plugins: [],
