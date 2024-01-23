@@ -36,13 +36,15 @@ const AboutMe = ({ setOpen }) => {
     return cardsItem.map((item) => (
       <div
         key={item.key}
-        className="w-full p-4 rounded-md shadow-2xl h-44 bg-slate-800 "
+        className='w-full p-4 rounded-md shadow-2xl h-44 lg:h-auto bg-slate-800 '
       >
-        <div className="flex items-center gap-4 text-gray-50">
+        <div className='flex items-center gap-4 text-gray-50 l'>
           <div>{item.icon}</div>
-          <h3 className="text-sm font-medium ">{item.title}</h3>
+          <h3 className='text-sm lg:!text-lg xl:!text-xl font-medium '>
+            {item.title}
+          </h3>
         </div>
-        <div className="py-4 text-xs leading-6 text-gray-50 ">
+        <div className='py-4 text-xs leading-6 text-gray-50 lg:!text-base xl:!text-lg '>
           <p>{item.content}</p>
         </div>
       </div>
@@ -51,20 +53,22 @@ const AboutMe = ({ setOpen }) => {
 
   return (
     <div
-      id="about-me"
-      className="w-full px-4 py-32 pt-4 pb-24 lg:flex lg:items-center lg:h-screen lg:custom-bg-clip-3 bg-slate-900 custom-bg-clip"
+      id='about-me'
+      className='w-full px-4 py-32 pt-4 pb-24 lg:flex lg:items-center lg:h-screen lg:custom-bg-clip-3 bg-slate-900 custom-bg-clip lg:justify-center '
     >
-      <div className="lg:container">
-        <div className="grid lg:grid-cols-2 lg:mx-auto">
-          <div className="p-4 text-gray-50 md:text-center lg:text-left md:flex md:flex-col md:justify-center lg:pl-10 lg:pb-10 ">
-            <h1 className="text-xl font-medium lg:text-2xl ">About Me</h1>
-            <p className="w-full py-4 text-sm text-justify md:w-3/4 md:m-auto lg:m-0">
+      <div className='lg:container'>
+        <div className='grid lg:grid-cols-2  '>
+          <div className='p-4 text-gray-50 md:text-center lg:text-left md:flex md:flex-col md:justify-center lg:pl-10 lg:pb-10 xl:gap-6 '>
+            <h1 className='text-xl font-medium lg:!text-2xl xl:!text-3xl xl:font-bold '>
+              About Me
+            </h1>
+            <p className='w-full py-4 text-sm  md:w-3/4 md:m-auto lg:m-0 lg:!text-lg xl:!text-xl '>
               I have been learning in this field since two and half years ago by
               attending online courses, and I have done some practical projects
               that you can see them by clicking on{" "}
               <a
-                href="#portfolio"
-                className="text-indigo-300 text-shadow font-lg"
+                href='#portfolio'
+                className='text-indigo-300 text-shadow font-lg'
               >
                 (portfolio)
               </a>
@@ -74,12 +78,12 @@ const AboutMe = ({ setOpen }) => {
             </p>
             <button
               onClick={() => setOpen(true)}
-              className="mt-0 text-sm primary-btn w-28 md:m-auto lg:m-0"
+              className='mt-0 text-sm primary-btn w-28 md:m-auto lg:m-0 lg:!text-lg xl:!text-xl'
             >
               Hire Me
             </button>
           </div>
-          <div className="grid gap-4 p-4 pb-10 md:grid-cols-2 ">
+          <div className='grid gap-4 p-4 pb-10 md:grid-cols-2 '>
             {renderCards()}
           </div>
         </div>

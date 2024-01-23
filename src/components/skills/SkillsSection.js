@@ -69,13 +69,13 @@ function SkillsSection() {
 
   const renderSkillDetails = () => {
     return skillsDetails.map((skill) => (
-      <div className="skill-detail" key={skill.title}>
-        <div className="relative shadow-2xl bar-wrapper ">
-          <div className="bar">
-            <svg className="svg" width="100%" height="100%">
-              <circle className="circle-back-bar " cx="58" cy="58" r="55" />
+      <div className='skill-detail' key={skill.title}>
+        <div className='relative shadow-2xl bar-wrapper '>
+          <div className='bar'>
+            <svg className='svg' width='100%' height='100%'>
+              <circle className='circle-back-bar ' cx='58' cy='58' r='55' />
               <circle
-                className="circle-bar "
+                className='circle-bar '
                 style={{
                   stroke: `${
                     skill.title === "HTML5"
@@ -116,16 +116,16 @@ function SkillsSection() {
                       : skill.title === "Git" && eighty
                   }`,
                 }}
-                cx="58"
-                cy="58"
-                r="55"
+                cx='58'
+                cy='58'
+                r='55'
               />
             </svg>
           </div>
-          <div className="absolute inset-0 rounded-full shadow-4xl bg-slate-600">
-            <div className="absolute flex flex-col items-center justify-center rounded-full text-gray-50 inset-4 bg-slate-600">
-              <span className="amount-of-skill ">{skill.amount}</span>
-              <h3 className="text-sm">{skill.title}</h3>
+          <div className='absolute inset-0 rounded-full shadow-4xl bg-slate-600'>
+            <div className='absolute flex flex-col items-center justify-center rounded-full text-gray-50 inset-4 bg-slate-600'>
+              <span className='amount-of-skill '>{skill.amount}</span>
+              <h3 className='text-sm'>{skill.title}</h3>
             </div>
           </div>
         </div>
@@ -135,13 +135,13 @@ function SkillsSection() {
 
   return (
     <div
-      id="skills"
-      className="py-24 -mt-32 lg:flex lg:relative lg:items-center lg:p-14 custom-bg-clip-2 lg:custom-bg-clip-3 lg:h-screen bg-slate-800"
+      id='skills'
+      className='py-24 -mt-32 lg:flex lg:relative lg:items-center lg:p-14 custom-bg-clip-2 lg:custom-bg-clip-3 lg:h-screen bg-slate-800'
     >
-      <h2 className="mb-4 text-2xl text-center lg:absolute lg:top-40 lg:text-4xl lg:left-2/4 lg:-translate-x-1/2 font-lg text-gray-50 ">
+      <h2 className='mb-4 text-2xl text-center lg:absolute lg:top-40 lg:text-4xl lg:left-2/4 lg:-translate-x-1/2 font-lg text-gray-50 lg:font-bold '>
         My Skills
       </h2>
-      <div className="relative grid lg:gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-9 ">
+      <div className='relative grid lg:gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-9 '>
         {renderSkillDetails()}
       </div>
     </div>

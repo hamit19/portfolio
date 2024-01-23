@@ -74,11 +74,11 @@ function Portfolio() {
   };
 
   return (
-    <div id="portfolio" className="px-4 pb-32 bt-4">
-      <h2 className="mb-12 text-2xl text-center text-gray-50 font-lg md:text-3xl lg:font-xl ">
+    <div id='portfolio' className='px-4 pb-32 bt-4'>
+      <h2 className='mb-12 text-2xl text-center text-gray-50 md:text-3xl lg:font-bold '>
         My Portfolio
       </h2>
-      <div className="grid grid-cols-custom-auto ">{renderImages()}</div>
+      <div className='grid grid-cols-custom-auto '>{renderImages()}</div>
     </div>
   );
 }
