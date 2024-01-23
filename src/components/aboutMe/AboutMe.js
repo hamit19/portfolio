@@ -8,15 +8,15 @@ const AboutMe = ({ setOpen }) => {
   const cardsItem = [
     {
       key: 1,
-      title: "Problem Solving",
+      title: "Problem-Solving",
       icon: <BsTools size={28} />,
-      content: `I attempt to solve problems or bugs. it is a fun challenge for me the solving problems or bugs.`,
+      content: `I attempt to solve problems or bugs. it is a fun challenge for me to solve problems or bugs.`,
     },
     {
       key: 2,
       title: "Teamwork",
       icon: <RiTeamLine size={34} />,
-      content: `Teamwork is very important in our field, and I will be able to work in a good team.`,
+      content: `Teamwork is essential in our field, and I will be able to work in a good team.`,
     },
     {
       key: 3,
@@ -55,7 +55,7 @@ const AboutMe = ({ setOpen }) => {
       className="w-full px-4 py-32 pt-4 pb-24 lg:flex lg:items-center lg:h-screen lg:custom-bg-clip-3 bg-slate-900 custom-bg-clip"
     >
       <div className="lg:container">
-        <div className="grid lg:grid-cols-2">
+        <div className="grid lg:grid-cols-2 lg:mx-auto">
           <div className="p-4 text-gray-50 md:text-center lg:text-left md:flex md:flex-col md:justify-center lg:pl-10 lg:pb-10 ">
             <h1 className="text-xl font-medium lg:text-2xl ">About Me</h1>
             <p className="w-full py-4 text-sm text-justify md:w-3/4 md:m-auto lg:m-0">
